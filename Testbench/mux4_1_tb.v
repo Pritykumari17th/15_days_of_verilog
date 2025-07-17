@@ -1,22 +1,42 @@
+/********************************************************************************************
+Copyright 2019 - Maven Silicon Softech Pvt Ltd. 
+ 
+All Rights Reserved.
+
+This source code is an unpublished work belongs to Maven Silicon Softech Pvt Ltd.
+
+It is not to be shared with or used by any third parties who have not enrolled for our paid training 
+
+courses or received any written authorization from Maven Silicon.
+
+
+Webpage     :      www.maven-silicon.com
+
+Filename    :	   mux4_1_tb.v   
+
+Description :      Mux 4:1 Testbench
+
+Author Name :      Susmita
+
+Version     :      1.0
+*********************************************************************************************/
+
 module mux4_1_tb();
 
-reg [5:0]in;
-wire out;
-integer i;
-//instantiate
+   //Step1 : Write down the variables required for testbench		
+								
+   //Step2 : Instantiate the Design 
 
-//mux4_1 dut(.in(in[3:0]),.s1(in[4]),.s0(in[5]),.out(out));
+   //Step3 : Declare a task to initialize inputs of DUT to 0 
 
-mux4to1 dut1(.A(in[0]),.B(in[1]),.C(in[2]),.D(in[3]),.s1(in[4]),.s0(in[5]),.y(out));
+   //Step4 : Declare  tasks with arguments for driving stimulus to DUT 
 
-initial begin
-$monitor("a=%0b\tb=%0b\tc=%0b\td=%0b\ts1=%0b\ts0=%0b\tout=%0b",in[0],in[1],in[2],in[3],in[4],in[5],out);
-in = 4'b1101;
-#5;
-for(i = 0; i<4;i=i+1)begin
-{in[4],in[5]} = i;
-#10;
-end
-#30 $finish;
-end
+   //Step5 : Call the tasks from procedural process 
+
+   //Step6 : Use $monitor task to display inputs and outputs
+
+   //Step7 : Use $finish task to terminate the simulation at 100ns
+
+   
 endmodule
+
